@@ -1,0 +1,7 @@
+# see: https://github.com/deepmap/oapi-codegen/blob/master/pkg/codegen/configuration.go
+package: oapigen
+generate:
+  chi-server: true
+  models: true
+compatibility:
+  always-prefix-enum-values: true
