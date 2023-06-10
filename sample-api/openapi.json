@@ -36,10 +36,31 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Task"
-                  }
+                  "type": "object",
+                  "title": "Pagination[array[Task{name, done, createdAt}]]",
+                  "properties": {
+                    "total": {
+                      "type": "integer"
+                    },
+                    "more": {
+                      "type": "boolean"
+                    },
+                    "cursor": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Task"
+                      }
+                    }
+                  },
+                  "required": [
+                    "total",
+                    "more",
+                    "data"
+                  ],
+                  "additionalProperties": false
                 }
               }
             }
