@@ -1,3 +1,6 @@
 go 1.20
 
-use ./sample-api
+use (
+	./connect-go
+	./sample-api
+)
