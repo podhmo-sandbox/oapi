@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/iancoleman/orderedmap"
+	"github.com/podhmo-sandbox/oapi/sample-api/seed/design"
 	"github.com/podhmo/gos/openapigen"
 	"github.com/podhmo/gos/pkg/maplib"
 )
@@ -12,29 +13,11 @@ import (
 func main() {
 	b := openapigen.NewBuilder(openapigen.DefaultConfig())
 
-	// types
-	Name := openapigen.Define("Name", b.String()).Doc("name of something")
-	openapigen.Define("DateTime", b.String().Format("date-time")) // for ReferenceByName
-
-	Task := openapigen.Define("Task", b.Object(
-		b.Field("name", b.Reference(Name)),
-		b.Field("done", b.Bool()),
-		b.Field("createdAt", b.ReferenceByName("DateTime")),
-	))
-
-	ListTask := b.Action("ListTask",
-		b.Input(b.Param("sort", b.String().Enum([]string{"createdAt", "-createdAt"})).AsQuery()),
-		b.Output(b.Array(Task)),
-	)
-
 	// routing
-	Error := openapigen.Define("Error", b.Object(
-		b.Field("message", b.String()),
-	)).Doc("default error")
-	r := openapigen.NewRouter(Error)
+	r := openapigen.NewRouter(design.Error)
 	{
 		r := r.Tagged("task")
-		r.Get("/tasks", ListTask)
+		r.Get("/tasks", design.ListTask)
 	}
 
 	// openapi data

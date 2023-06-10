@@ -85,7 +85,8 @@
       },
       "Name": {
         "type": "string",
-        "description": "name of something"
+        "description": "name of something",
+        "minLength": 1
       },
       "DateTime": {
         "type": "string",
