@@ -3,5 +3,6 @@ package: oapigen
 generate:
   chi-server: true
   models: true
+  # embedded-spec: true
 compatibility:
   always-prefix-enum-values: true
