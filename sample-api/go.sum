@@ -1,0 +1,4 @@
+github.com/iancoleman/orderedmap v0.2.0 h1:sq1N/TFpYH++aViPcaKjys3bDClUEU7s5B+z6jq8pNA=
+github.com/iancoleman/orderedmap v0.2.0/go.mod h1:N0Wam8K1arqPXNWjMo21EXnBPOPp36vB07FNRdD2geA=
+github.com/podhmo/gos v0.0.5 h1:hBt+VbjrmQKkeRB4WigTLbSqHpiJ+kNwdhpOEHI8YSU=
+github.com/podhmo/gos v0.0.5/go.mod h1:GzbUbUQwFnKHcim4FQnY2hhAs3Uujv/6dR5/4WdXSDE=
