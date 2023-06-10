@@ -18,7 +18,13 @@ func (s *GreetServer) Greet(
 	ctx context.Context,
 	req *connect.Request[greetv1.GreetRequest],
 ) (*connect.Response[greetv1.GreetResponse], error) {
+	if err := ctx.Err(); err != nil {
+		return nil, err // automatically coded correctly
+	}
 	log.Println("Request headers: ", req.Header())
+	// if err := validateGreetRequest(req.Msg); err != nil {
+	// 	return nil, connect.NewError(connect.CodeInvalidArgument, err)
+	// }
 	res := connect.NewResponse(&greetv1.GreetResponse{
 		Greeting: fmt.Sprintf("Hello, %s!", req.Msg.Name),
 	})
