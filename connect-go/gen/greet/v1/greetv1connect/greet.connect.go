@@ -7,8 +7,8 @@ package greetv1connect
 import (
 	context "context"
 	errors "errors"
-	v1 "example/gen/greet/v1"
 	connect_go "github.com/bufbuild/connect-go"
+	v1 "github.com/podhmo-sandbox/oapi/connect-go/gen/greet/v1"
 	http "net/http"
 	strings "strings"
 )
