@@ -31,3 +31,7 @@ create buf.gen.yaml
 buf lint
 buf generate
 ```
+
+## generate doc?
+
+- [Generating OpenAPI documentation · bufbuild/connect-go · Discussion #256](https://github.com/bufbuild/connect-go/discussions/256)
